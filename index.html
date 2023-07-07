@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Geography Quiz</title>
+    
+
+    <style>
+        body {
+            background-image: url("Historia-sara.jpg"); 
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #000000;
+            display: flex;
+            height: 100vh;
+            margin: 0;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+        /* @font-face {
+            font-family: 'Royalacid';
+            src: url('/src/fonts/Royalacid_o.ttf') format('opentype');
+        }
+        @font-face {
+            font-family: 'Headline';
+            src: url('/src/fonts/EVERYHEADLINE-Thin.otf') format('opentype');
+        } */
+
+        h1 {
+            margin-top: -5%;
+            margin-right: 40%;
+            font-size: 45px;
+            box-shadow: #632c07;
+            color: #502406;
+            font-family: Royalacid;
+        }
+
+        #quiz-container {
+            margin-top: 10%;
+            display: flex;
+            flex-direction: column;
+            color: #502406;
+            background-color: rgba(51, 51, 51, 0.23);
+            height: 40%;
+            width: 60%;
+            resize: none;
+            text-align:justify;
+            position: relative;
+            border-radius: 20px;
+        }
+        #quiz-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("btn.png");
+            opacity: 0.5;
+            z-index: -1;
+            border-radius: 20px;
+            border: 2px solid rgba(99, 44, 7, 0.68);
+        }
+
+        #question-container {
+            overflow-y: auto;
+            resize: none;
+            text-align:justify;
+        }
+
+        p{
+            justify-content: center;
+            align-items: center;
+            color: #632c07;
+        }
+
+        h3 {
+            justify-content: center;
+            align-items: center;
+            font-size:25px;
+            color: rgba(65, 32, 6, 0.91);
+            font-family: 'Headline';
+        }
+
+        input[type='radio'] {
+            color: #ffffff;
+        }
+
+        #next-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #632c07;
+            background-image: url("btn.png");
+            color: #632c07;
+            box-shadow: 0px 2px 4px rgb(99, 44, 7);
+            cursor: pointer;
+            transition: opacity 0.3s, background-color 0.3s;
+        }
+
+        #next-btn:hover {
+            background-color: #333333;
+        }
+
+        #next-btn:active {
+            color: #632c07;
+            opacity: 0.6;
+        }
+
+        #start-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(51, 51, 51, 0.23);
+            width: 60%;
+            border:solid 2px #632C07FF;
+            height: 50%;
+            border-radius: 10px;
+        }
+        h6{
+            justify-content: center;
+            align-items: center;
+            color: #632c07;
+            font-size: 28px;
+        }
+        #start-container p{
+            margin: 0;
+        }
+
+        #play-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 2px solid #632c07;
+             background-image: url("btn.png"); 
+            color: #632c07;
+            box-shadow: 0px 2px 4px rgb(99, 44, 7);
+            cursor: pointer;
+            transition: opacity 0.3s, background-color 0.3s;
+            width: 30%;
+            margin-top: 10%;
+        }
+
+        #play-btn:hover {
+            background-color: #333333;
+            width: 30%;
+        }
+
+        #play-btn:active {
+            color: #632c07;
+            opacity: 0.6;
+            width: 30%;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Geography Quiz</h1>
+
+<div id="start-container">
+    <h6>Welcome!</h6>
+    <p>This is a geography quiz game containing 10 questions. After answering, you will see how well you did.
+        <br>
+        Good luck!</p>
+    <button id="play-btn">Play Game</button>
+</div>
+
+<div id="quiz-container" style="display: none;">
+    <div id="question-container"></div>
+    <button id="next-btn">Next</button>
+</div>
+
+<div id="result-container" style="display: none;">
+    <h3>Quiz Results</h3>
+    <p id="correct-answers"></p>
+</div>
+
+
+<script src="main.js"></script>
+
+</body>
+</html>
